@@ -1,0 +1,85 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.card {
+  padding: 2em;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.input {
+  padding: 10px;
+  border-radius: 10px;
+  font-size: medium;
+}
+
+.todo-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+
+.todoItem {
+  min-width: 25em;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: antiquewhite;
+  border-radius: 5px;
+  padding-block: 3px;
+}
+
+.todoItem__title {
+  margin: 0 0 0 8px;
+  padding-block: 5px;
+}
+
+.todoItem__actions {
+  position: absolute;
+  right: 0;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.btn-checkmark {
+  width: 30px;
+  height: 30px;
+  border: 1px solid white;
+  border-radius: 5px; 
+  padding-block: 5px;
+  cursor: pointer;
+}
+
+.btn-delete {
+  margin-left: 4px;
+  border: 1px solid white;
+  border-radius: 5px; 
+  padding-block: 5px;
+  cursor: pointer;
+}
+
