@@ -5,25 +5,27 @@ interface Props {
   setTodoList: React.Dispatch<React.SetStateAction<Todo[] | null>>
 }
 
-export default function Input({ setTodoList }: Props): JSX.Element {
-  const [todoInput, setTodoInput] = useState<Todo>({ title: "", id: "" })
+export default function Input({ setTodoList }: Props) {
+  const [todoInput, setTodoInput] = useState<Todo>({ title: "", id: "", isDone: false })
 
   const inputRef = useRef<HTMLInputElement>(null)
 
   const handleCreateTodo = () => {
     if (todoInput.title.trim() !== "") {
       setTodoList((currentTodo) => [...(currentTodo || []), todoInput])
-      setTodoInput({ title: "", id: "" })
+      setTodoInput({ title: "", id: "", isDone: false })
     }
+    // -to `focus` on the input
     if(inputRef.current) {
       inputRef.current.focus()
     }
   }
 
-  const handleInput = (value: string) => {
+  const handleInputOnChange = (input: string) => {
     setTodoInput({
-      title: value,
-      id: crypto.randomUUID()
+      title: input,
+      id: crypto.randomUUID(),
+      isDone: false
     })
   }
 
@@ -36,7 +38,7 @@ export default function Input({ setTodoList }: Props): JSX.Element {
         className="input"
         ref={inputRef}
         value={todoInput?.title}
-        onChange={(e) => handleInput(e.target.value)}
+        onChange={(e) => handleInputOnChange(e.target.value)}
       />
       <button className="btn" onClick={handleCreateTodo}>Add</button>
     </div>
