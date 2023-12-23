@@ -1,3 +1,7 @@
+# Todo using Typescript
+
+A project made while learning typescript. A basic todo application where you can add, delete and checkmark task.
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
